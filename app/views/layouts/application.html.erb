@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DataVizFinalProject</title>
+    <title>DS-8007 Final Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,34 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>DS-8007 Final Project</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1>Exploring Toronto Neighbourhoods</h1>
+          <p class="lead text-muted">
+            Visualizing neighbourhoods in city of Toronto.
+          </p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Crime Rate</a>
+            <a href="#" class="btn btn-primary my-2">Household Income Data</a>
+            <a href="#" class="btn btn-primary my-2">Population</a>
+            <a href="#" class="btn btn-primary my-2">Health</a>
+          </p>
+        </div>
+      </section>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
