@@ -1,6 +1,6 @@
 import "leaflet";
 
-$(document).on("turbolinks:load", function() {
+$(document).ready(function() {
     // create a map in the "map" div, set the view to a given place and zoom
     var map = L.map('map').setView([43.653908, -79.384293], 10);
 
