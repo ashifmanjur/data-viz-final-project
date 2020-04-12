@@ -9,6 +9,7 @@
     "bootstrap": "4.4.1",
     "d3": "^5.15.1",
     "jquery": "^3.5.0",
+    "leaflet": "^1.6.0",
     "popper.js": "^1.16.1",
     "topojson": "^3.0.2",
     "turbolinks": "^5.2.0"
