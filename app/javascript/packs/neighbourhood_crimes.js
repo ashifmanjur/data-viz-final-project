@@ -35,8 +35,8 @@ $(document).ready(function() {
     $.getJSON('data/toronto_neighbourhoods.geojson', function(data) {
         var geo = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
-                layer.bindPopup('<h5><a href="/neighbourhoods/'+ feature.properties.Hood_ID +'">' +
-                    feature.properties.Area_Name + '</a></h5>' +
+                layer.bindPopup('<h5 style="color: #5aa8c7;">' + feature.properties.Area_Name + '</h5>' +
+                    'Area Code: <b>' + feature.properties.Hood_ID + '</b><br />' +
                     '<b>Average Crime (Annual): ' + feature.properties.Crime_Count_Sum.toFixed(2) + '</b><br />' +
                     '<i>2014 - 2019</i>');
             },

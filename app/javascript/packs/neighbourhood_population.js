@@ -35,8 +35,8 @@ $(document).ready(function() {
     $.getJSON('data/toronto_neighbourhood_population.geojson', function(data) {
         var geo = L.geoJson(data, {
             onEachFeature: function (feature, layer) {
-                layer.bindPopup('<h5><a href="/demographics/'+ feature.properties.Hood_ID +'">' +
-                    feature.properties.Area_Name + '</a></h5>' +
+                layer.bindPopup('<h5 style="color: #5aa8c7;">' + feature.properties.Area_Name + '</h5>' +
+                    'Area Code: <b>' + feature.properties.Hood_ID + '</b><br />' +
                     'Total Population: <b>' + feature.properties.Population_Size.toString() + '</b><br />' +
                     'Density (people/km<sup>2</sup>): <b>' + feature.properties.Population_Density.toFixed(2) + '</b><br />' +
                     '<i>Census 2016</i>'
