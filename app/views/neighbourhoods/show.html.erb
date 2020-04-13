@@ -1,8 +1,27 @@
+<!-- Example taken from https://www.d3-graph-gallery.com/graph/stackedarea_basic.html -->
+<div id="neighboorhood-id-container" class="hide" data-nid="<%= @neighboorhood_id %>"></div>
 <div class="album py-5">
   <div class="container">
-    <div id="neighboorhood-id-container" class="hide" data-nid="<%= @neighboorhood_id %>"></div>
     <div class="row">
+      <h3>Time series data by crime type</h3>
+    </div>
+  </div>
 
+  <div class="container">
+    <div class="row">
+      <svg id="stacked-line-chart"></svg>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <h3>Compare percentiles by crime type</h3>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <svg id="pie-chart"></svg>
     </div>
   </div>
 

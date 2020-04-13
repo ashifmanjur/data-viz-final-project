@@ -26,10 +26,6 @@ data.each do |datum|
   result_datum["Hood_ID"] = datum["Hood_ID"].to_i
   result_datum["Crime_Count_Sum"] = sum_avg_count
 
-  # keys_needed.grep(/_2014|_2015|_2016|_2017|_2018|_2019/).each do |data_key|
-  #   result_datum[data_key] = datum[data_key].to_f
-  # end
-
   final_result[datum["Hood_ID"].to_i] = result_datum
 end
 
@@ -46,17 +42,25 @@ with_crime_stats = {}
 with_crime_stats["type"] = data_hash["type"]
 with_crime_stats["crs"] = data_hash["crs"]
 feature_list = []
+neighbourhood_data = {}
 
 data_hash["features"].each do |feature|
   feature_datum = {}
   feature_datum["type"] = feature["type"]
+  area_code = feature["properties"]["AREA_SHORT_CODE"]
+  area_name = feature["properties"]["AREA_NAME"].sub(" (#{area_code})", '')
+  feature_datum["properties"] = final_result[area_code].merge("Area_Name" => area_name)
   feature_datum["geometry"] = feature["geometry"]
-  feature_datum["properties"] = final_result[feature["properties"]["AREA_SHORT_CODE"].to_i].merge("Area_Name" => feature["properties"]["AREA_NAME"])
+  neighbourhood_data[area_name] = area_code
   feature_list << feature_datum
 end
 
 with_crime_stats["features"] = feature_list
 
-File.open("./processed_output/toronto_neighbourhoods.geojson", "w") do |f|
+File.open("./toronto_neighbourhoods.geojson", "w") do |f|
   f.write(with_crime_stats.to_json)
+end
+
+File.open("./toronto_neighbourhoods_names.json", "w") do |f|
+  f.write(neighbourhood_data.to_json)
 end

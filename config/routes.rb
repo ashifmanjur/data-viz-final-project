@@ -2,5 +2,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "home#index"
 
-  get '/neighbourhoods/:id', to: 'neighbourhoods#show'
+  # get '/neighbourhoods/:id', to: 'neighbourhoods#show'
+  get '/demographics', to: 'home#demographics', as: "demographics"
 end

@@ -22,15 +22,15 @@
 
     <main role="main">
 
-      <section class="jumbotron text-center">
+      <section class="jumbotron text-center" style="padding: 2rem 2rem !important;margin-bottom: 0px !important;">
         <div class="container">
           <h1>Exploring Toronto Neighbourhoods</h1>
           <p class="lead text-muted">
             Visualizing neighbourhoods in city of Toronto.
           </p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Crime Rate</a>
-            <a href="#" class="btn btn-primary my-2">Demographic</a>
+            <%= link_to "Crime Rate", root_path, class: "btn btn-primary my-2" %>
+            <%= link_to "Demographics", demographics_path, class: "btn btn-primary my-2" %>
           </p>
         </div>
       </section>

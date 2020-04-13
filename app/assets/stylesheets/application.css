@@ -15,3 +15,17 @@
  *= require leaflet
  *= require_self
  */
+
+svg {
+    float: left;
+}
+
+/*svg:nth-child(1) {*/
+/*    float: left;*/
+/*}*/
+
+/*div {*/
+/*    width: 1305px;*/
+/*    border: solid 1px green;*/
+/*    overflow: auto;*/
+/*}*/
